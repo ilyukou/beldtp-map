@@ -4,39 +4,10 @@ import "./MarkerMap.css";
 
 export default class MarkerMap extends Component {
 
-    getMarkersAsText(){
-        let markers = this.props.value.map((marker) =>
-            <ul >
-                <li>{marker.id}</li>
-                <li>{marker.longitude}</li>
-                <li>{marker.latitude}</li>
-            </ul>
-        ); 
-
-        return <ul>{markers}</ul>;
-    }
-
-    getDate(marker){
-        let minute = marker.minute;
-
-        if(minute < 9){
-            minute = "0" + minute;
-        }
-
-        return <div className="markerPopup">{marker.hour}:{minute} {marker.day}/{marker.month}/{marker.year}</div>
-    }
-
-    getMarkerInfo(marker){
-        return <div>
-            {marker.text}
-            {this.getDate(marker)}
-        </div>
-    }
-
     getMarkers(){
         return this.props.value.map((marker) =>
             <Marker key={marker.id} position={[marker.latitude, marker.longitude]}>
-                <Popup>{this.getMarkerInfo(marker)}</Popup>
+                <Popup>id - {marker.id}</Popup>
             </Marker>
         ); 
     }

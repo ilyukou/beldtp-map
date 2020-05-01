@@ -1,108 +1,20 @@
-.div1{
-
-    padding-top: 15px;
-    padding-bottom: 10px;
-    
-    
-    background: #f2f2f2;
+.preloader {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+.preloader__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
 }
 
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-@media (min-width: 1281px) {
-
-    .div1{    
-        width: 100%;
-        float: left;
-        height: 70px;
-    }
-  
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-    .div1{    
-      width: 100%;
-      float: left;
-      height: 70px;
-    }
-
-    .div2{    
-        width: 100%;
-        height: calc(100%-120px);
-    }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .div1{
-        height: 600px;
-    }
-  
-    .div2{
-        max-height: 200px;
-    }
-   
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .div1{
-        height: 600px;
-    }
-  
-    .div2{
-        height: 200px;
-    }
-   
-  }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    .div1{
-        height: 600px;
-    }
-  
-    .div2{
-        height: 200px;
-    }
-
-  }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-    .div1{
-        height: 600px;
-    }
-  
-    .div2{
-        height: 200px;
-    }
-    
-  }
+.spinner-grow{
+  width: 4rem; 
+  height: 4rem;
+}
