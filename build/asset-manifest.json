@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.4a5d5d3d.chunk.css",
-    "main.js": "/react-gh-pages/static/js/main.7806a0df.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.7806a0df.chunk.js.map",
-    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.599515ac.js",
-    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.599515ac.js.map",
-    "static/css/2.69121389.chunk.css": "/react-gh-pages/static/css/2.69121389.chunk.css",
-    "static/js/2.cc0ba37b.chunk.js": "/react-gh-pages/static/js/2.cc0ba37b.chunk.js",
-    "static/js/2.cc0ba37b.chunk.js.map": "/react-gh-pages/static/js/2.cc0ba37b.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "precache-manifest.ff5f49868cca22a491266e816fec8673.js": "/react-gh-pages/precache-manifest.ff5f49868cca22a491266e816fec8673.js",
-    "service-worker.js": "/react-gh-pages/service-worker.js",
-    "static/css/2.69121389.chunk.css.map": "/react-gh-pages/static/css/2.69121389.chunk.css.map",
-    "static/css/main.4a5d5d3d.chunk.css.map": "/react-gh-pages/static/css/main.4a5d5d3d.chunk.css.map",
-    "static/js/2.cc0ba37b.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/2.cc0ba37b.chunk.js.LICENSE.txt"
+    "main.css": "/beldtp-map/static/css/main.4a5d5d3d.chunk.css",
+    "main.js": "/beldtp-map/static/js/main.e152e76e.chunk.js",
+    "main.js.map": "/beldtp-map/static/js/main.e152e76e.chunk.js.map",
+    "runtime-main.js": "/beldtp-map/static/js/runtime-main.9175e875.js",
+    "runtime-main.js.map": "/beldtp-map/static/js/runtime-main.9175e875.js.map",
+    "static/css/2.69121389.chunk.css": "/beldtp-map/static/css/2.69121389.chunk.css",
+    "static/js/2.cc0ba37b.chunk.js": "/beldtp-map/static/js/2.cc0ba37b.chunk.js",
+    "static/js/2.cc0ba37b.chunk.js.map": "/beldtp-map/static/js/2.cc0ba37b.chunk.js.map",
+    "index.html": "/beldtp-map/index.html",
+    "precache-manifest.48e6586eaabd95821061c91972904041.js": "/beldtp-map/precache-manifest.48e6586eaabd95821061c91972904041.js",
+    "service-worker.js": "/beldtp-map/service-worker.js",
+    "static/css/2.69121389.chunk.css.map": "/beldtp-map/static/css/2.69121389.chunk.css.map",
+    "static/css/main.4a5d5d3d.chunk.css.map": "/beldtp-map/static/css/main.4a5d5d3d.chunk.css.map",
+    "static/js/2.cc0ba37b.chunk.js.LICENSE.txt": "/beldtp-map/static/js/2.cc0ba37b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.599515ac.js",
+    "static/js/runtime-main.9175e875.js",
     "static/css/2.69121389.chunk.css",
     "static/js/2.cc0ba37b.chunk.js",
     "static/css/main.4a5d5d3d.chunk.css",
-    "static/js/main.7806a0df.chunk.js"
+    "static/js/main.e152e76e.chunk.js"
   ]
 }
