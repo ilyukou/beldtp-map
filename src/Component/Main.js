@@ -5,9 +5,7 @@ import {MARKER_URL} from '../properties';
 import MarkerMap from './MarkerMap';
 
 import './Filter.css';
-import {Form,Button,Container, Col, Row, InputGroup, FormControl} from 'react-bootstrap';
-
-import { MDBSpinner } from 'mdbreact';
+import {Button,Container, Col, Row, InputGroup, FormControl, Spinner } from 'react-bootstrap';
 
 import './Main.css';
 
@@ -18,130 +16,116 @@ export default class Main extends Component {
         this.state = {
             isLoaded : false,
             isLoadPage : false,
-            markers : []
+            markers : [],
+            fromTime : null,
+            toTime : null,
         };
 
         this.updateMarkers = this.updateMarkers.bind(this);
-        
     }
 
     getFilterDiv(){
+        
+        var date = new Date();
+        var localTime = date.getTime();
+
+        // get local timezone offset and convert to milliseconds
+        var localOffset = date.getTimezoneOffset() * 60000;
+
+        // obtain the UTC time in milliseconds
+        var utc = localTime + localOffset;
+
+        var offset = 3;  // offset for Minsk is 3 hours
+        var minskTimeInMillis = utc + (3600000 * offset);
+
+        var minskTime = new Date(minskTimeInMillis);
+
+        let month = "";
+
+        if(minskTime.getMonth() < 9){
+            month = "0" + (minskTime.getMonth() + 1);
+        } else{
+            month = (minskTime.getMonth() + 1).toString();
+        }
+
+        let day = "";
+
+        if(minskTime.getDate() < 10){
+            day = "0" + minskTime.getDate();
+        } else{
+            day = minskTime.getDate().toString();
+        }
+
+        let hour = "";
+
+        if(minskTime.getHours() < 10){
+            hour = "0" + minskTime.getHours();
+        } else{
+            hour = minskTime.getHours().toString();
+        }
+
+        let minute = "";
+
+        if(minskTime.getMinutes() < 10){
+            minute = "0" + minskTime.getMinutes();
+        } else{
+            minute = minskTime.getMinutes().toString();
+        }
+
+        let minskTimeString = minskTime.getFullYear() + "-" + month
+        + "-" + day + "T" + hour + ":" + minute;
+
         return <Container>
-        <Row >
-            <Col>
-                <Form>
-
-                    <Form.Group >
-                    <Form.Label><h5>Поиск по временнным промежуткам.</h5></Form.Label>
-                    </Form.Group>
-
-                    <Form.Group>
-
-                        <InputGroup>
-
-                            <InputGroup.Prepend>
-                                <InputGroup.Text>с</InputGroup.Text>
-                            </InputGroup.Prepend>
-
-                            <FormControl placeholder="0" type="datetime-local"/>
-
-                        </InputGroup>
-                        <InputGroup>
-
-                            <InputGroup.Prepend>
-                                <InputGroup.Text>по</InputGroup.Text>
-                            </InputGroup.Prepend>
-
-                            <FormControl placeholder="0" type="datetime-local"/>
-
-                        </InputGroup>
-                    </Form.Group>
-                    
-
+            <Row >
+                <Col>
+                    <h5>Фильтр по времени</h5>
+                </Col>
+                <Col>
                     <InputGroup>
-                        <Button variant="outline-success" onClick={this.updateMarkers} >
-                            Поиск
-                        </Button>
+                        <InputGroup.Text>с</InputGroup.Text>
+                        <FormControl 
+                            id="fromTime"
+                            type="date"
+                            min="2000-01-01"
+                            />
                     </InputGroup>
-                    
-                </Form>
-            </Col>
-        </Row>
+                </Col>
+                <Col>
+                    <InputGroup>
+                        <InputGroup.Text>по</InputGroup.Text>
+                        <FormControl 
+                            id="toTime"
+                            type="date"
+                            />
+                    </InputGroup>
+                </Col>
+                <Col>
+                    <Button variant="outline-success" onClick={this.updateMarkers} >
+                        Поиск
+                    </Button>
+                </Col>
+            </Row>
         </Container>;
     }
 
     async updateMarkers(){
-        if(this.state.isLoadPage && this.state.isLoaded){
-            
-            if(this.isValid()){
-                
-            }
-            
+        let from = document.getElementById("fromTime").value;
+        let to = document.getElementById("toTime").value;
+
+        if(!this.isValid(from)){
+            alert("Начальный диапозон указан неверно или не полностью")
         }
+
+        if(!this.isValid(to)){
+            alert("Конечный диапозон указан неверно или не полностью")
+        }
+
     }
 
-    isValid(){
-
-        let fromYear = document.getElementById("fromYear").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("From year incorrect. Correct range 2000-2020");
+    isValid(string){
+        if(string.length != 10){
             return false;
         }
-
-        let toYear = document.getElementById("toYear").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("To year incorrect. Correct range 2000-2020");
-            return false;
-        }
-
-        let fromMonth = document.getElementById("fromMonth").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("From month incorrect. Correct range 1-12");
-            return false;
-        }
-
-        let toMonth = document.getElementById("toMonth").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("To month incorrect. Correct range 1-12");
-            return false;
-        }
-
-        let fromDay = document.getElementById("fromDay").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("From day incorrect. Correct range 1-31");
-            return false;
-        }
-
-        let toDay = document.getElementById("toDay").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("To day incorrect. Correct range 1-31");
-            return false;
-        }
-
-        let fromHour = document.getElementById("fromHour").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("From hour incorrect. Correct range 1-23");
-            return false;
-        }
-
-        let toHour = document.getElementById("toHour").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("To hour incorrect. Correct range 1-23");
-            return false;
-        }
-
-        let fromMinute = document.getElementById("fromMinute").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("From minute incorrect. Correct range 1-59");
-            return false;
-        }
-
-        let toMinute = document.getElementById("toMinute").value;
-        if(!this.validate(fromYear,2000,2020)){
-            alert("To minute incorrect. Correct range 1-59");
-            return false;
-        }
-
 
         return true;
     }
@@ -202,10 +186,11 @@ export default class Main extends Component {
                 
                 <div>
                     <div class="div1">
-                        
+                    {this.getFilterDiv()}
                     </div>
                     <div class="div2">
-                        {this.getFilterDiv()}
+                        <Spinner animation="grow"/>
+                        <MarkerMap value={[]}/>
                     </div>
                       
                 </div>

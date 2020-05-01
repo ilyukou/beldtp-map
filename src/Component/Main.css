@@ -1,9 +1,7 @@
 .div1{
 
-    padding-top: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
     
     
     background: #f2f2f2;
@@ -17,17 +15,11 @@
 @media (min-width: 1281px) {
 
     .div1{    
-        width: 25%;
+        width: 100%;
         float: left;
-        height: 100vh;
+        height: 70px;
     }
   
-    .div2{    
-        width: 75%;
-        margin-left: 25%;
-        height: 100vh;
-    }
-    
   }
   
   /* 
@@ -38,15 +30,14 @@
   @media (min-width: 1025px) and (max-width: 1280px) {
     
     .div1{    
-        width: 25%;
-        float: left;
-        height: 100vh;
+      width: 100%;
+      float: left;
+      height: 70px;
     }
-  
+
     .div2{    
-        width: 75%;
-        margin-left: 25%;
-        height: 100vh;
+        width: 100%;
+        height: calc(100%-120px);
     }
     
   }
