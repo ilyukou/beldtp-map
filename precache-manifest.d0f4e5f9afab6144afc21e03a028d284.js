@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df169e04b396718cd2926d9cc8cbf5c3",
+    "revision": "6c97bc00c9848c7edb57d6aa7549fd0b",
     "url": "/beldtp-map/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beldtp-map/static/css/2.69121389.chunk.css"
   },
   {
-    "revision": "34a45903ec1ad6d1fd73",
-    "url": "/beldtp-map/static/css/main.1752599a.chunk.css"
+    "revision": "4c99c9c56ccb0cd26813",
+    "url": "/beldtp-map/static/css/main.73a4fed7.chunk.css"
   },
   {
     "revision": "81ba6cbaea5fc64d4e7f",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beldtp-map/static/js/2.af26f0f4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "34a45903ec1ad6d1fd73",
+    "revision": "4c99c9c56ccb0cd26813",
     "url": "/beldtp-map/static/js/main.796f0135.chunk.js"
   },
   {
