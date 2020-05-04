@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/beldtp-map/static/css/main.0a5663c2.chunk.css",
-    "main.js": "/beldtp-map/static/js/main.3f587091.chunk.js",
-    "main.js.map": "/beldtp-map/static/js/main.3f587091.chunk.js.map",
+    "main.js": "/beldtp-map/static/js/main.d6101a7b.chunk.js",
+    "main.js.map": "/beldtp-map/static/js/main.d6101a7b.chunk.js.map",
     "runtime-main.js": "/beldtp-map/static/js/runtime-main.9175e875.js",
     "runtime-main.js.map": "/beldtp-map/static/js/runtime-main.9175e875.js.map",
     "static/css/2.69121389.chunk.css": "/beldtp-map/static/css/2.69121389.chunk.css",
     "static/js/2.af26f0f4.chunk.js": "/beldtp-map/static/js/2.af26f0f4.chunk.js",
     "static/js/2.af26f0f4.chunk.js.map": "/beldtp-map/static/js/2.af26f0f4.chunk.js.map",
     "index.html": "/beldtp-map/index.html",
-    "precache-manifest.367a039d90054588c3155d59fee4e15a.js": "/beldtp-map/precache-manifest.367a039d90054588c3155d59fee4e15a.js",
+    "precache-manifest.bedc8de63713b42f4e99061fc1153015.js": "/beldtp-map/precache-manifest.bedc8de63713b42f4e99061fc1153015.js",
     "service-worker.js": "/beldtp-map/service-worker.js",
     "static/css/2.69121389.chunk.css.map": "/beldtp-map/static/css/2.69121389.chunk.css.map",
     "static/css/main.0a5663c2.chunk.css.map": "/beldtp-map/static/css/main.0a5663c2.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.69121389.chunk.css",
     "static/js/2.af26f0f4.chunk.js",
     "static/css/main.0a5663c2.chunk.css",
-    "static/js/main.3f587091.chunk.js"
+    "static/js/main.d6101a7b.chunk.js"
   ]
 }
