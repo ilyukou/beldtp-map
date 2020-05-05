@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/beldtp-map/precache-manifest.b3531cc246703baf3c19f97f32433c43.js"
+  "/beldtp-map/precache-manifest.1d372e87f12ffb579c23ba507f62b652.js"
 );
 
 self.addEventListener('message', (event) => {

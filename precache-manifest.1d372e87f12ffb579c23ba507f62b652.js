@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7236844ed984234fdff0f45dd34bc6dc",
+    "revision": "5ce69f0039e18893f535498247ca01ee",
     "url": "/beldtp-map/index.html"
   },
   {
