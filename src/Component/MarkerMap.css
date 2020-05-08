@@ -5,3 +5,34 @@
     margin: 0px;
     padding: 0;
 }
+.scale {
+    transition: 0.35s; /* Время эффекта */
+}
+.scale:hover {
+    transform: scale(2); /* Увеличиваем масштаб */
+}
+
+
+.popup{
+    margin: 5px;
+}
+
+.popup.popupText {
+    width: 90%;
+}
+
+.popupImage {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+    width: 36px;
+    height: 28px;
+    font: 27px/23px Tahoma, Verdana, sans-serif;
+    color : #ff8989;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover{
+    color : #ff0000;
+}

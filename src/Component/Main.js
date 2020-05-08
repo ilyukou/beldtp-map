@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'; // https://www.npmjs.com/package/react-axios
 
-import {MARKER_URL} from '../properties';
+import {BACKUP_URL} from '../properties';
 import MarkerMap from './MarkerMap';
-
-import { Spinner } from "react-bootstrap";
 
 import './Main.css';
 
@@ -13,51 +11,41 @@ export default class Main extends Component {
         super(props);
 
         this.state = {
-            isLoaded : false,
-            isLoadPage : false,
-            markers : [],
-            fromTime : null,
-            toTime : null,
+            data : null,
+            isLoding : true
         };
     }
 
-    async handle(){
-
-        // not Loaded
-        if(!this.state.isLoaded){ // net update
-
-            await axios.get(MARKER_URL, {'Access-Control-Allow-Origin':'*'})
-            .then(res => {
-                this.setState({isLoaded : true});
-                this.setState({isLoadPage : true});
-                this.setState({markers : res.data})
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        }
+    async getBackupFromS3(){
+        await axios.get(BACKUP_URL, {
+            headers: {
+              'Content-Type': 'application/octet-stream'
+            }
+          }).then(res => {
+              console.log(res);
+              this.setState({data : res.data})
+              this.setState({isLoding : false})
+          })
     }
 
 
     render(){
-        this.handle();
-        if(this.state.isLoaded){
+        document.title = "Карта ДТП"
+
+        if(this.state.isLoding){
+            this.getBackupFromS3();
             return(
                 <div>
-                    <div class="div2">
-                        <MarkerMap value={this.state.markers}/>
-                    </div>
+                    <MarkerMap value={[]}/>
                 </div>
             );
-            
         } else {
             return(
-                <div className="preloader">
-                    <div className="preloader__loader">
-                        <Spinner animation="grow" size="lg"/>
-                    </div>
+                <div>
+                    <MarkerMap value={this.state.data.incident}/>
                 </div>
-            );           
+            );
         }
+        
     }
 }
